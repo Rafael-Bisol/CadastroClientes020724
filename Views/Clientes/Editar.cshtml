@@ -1,0 +1,16 @@
+@model CadastroClientes.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<form id="editar-form" asp-action="Edit">
+    <input type="hidden" asp-for="Cliente_id" />
+    <label asp-for="Nome">Nome:</label><br>
+    <input type="text" asp-for="Nome"/><br>
+    <label asp-for="Endereco">Endereço:</label><br>
+    <input type="text" asp-for="Endereco" /><br>
+    <label asp-for="Telefone">Telefone:</label><br>
+    <input type="text" asp-for="Telefone" /><br>
+    <input type="submit" value="Salvar" />
+</form>

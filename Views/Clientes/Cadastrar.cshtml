@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Cadastro de Cliente";
+}
+
+@model CadastroClientes.Models.Cliente
+
+<form id="create-form" asp-action="Create">
+    <label asp-for="Nome">Nome:</label><br>
+    <input type="text" asp-for="Nome" /><br>
+    <label asp-for="Endereco">Endereço:</label><br>
+    <input type="text" asp-for="Endereco" /><br>
+    <label asp-for="Telefone">Telefone:</label><br>
+    <input type="text" asp-for="Telefone" />
+    <input type="submit" value="Enviar" />
+</form>

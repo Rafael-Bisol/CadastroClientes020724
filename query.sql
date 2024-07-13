@@ -1,0 +1,11 @@
+CREATE DATABASE dbAula020724;
+USE dbAula020724;
+CREATE TABLE IF NOT EXISTS tbClientes (
+    Cliente_id INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Endereco VARCHAR(255) NOT NULL,
+    Telefone VARCHAR(25) NOT NULL
+);
+
+-- RENAME TABLE tbClientes TO Clientes;
+-- RENAME TABLE Clientes TO tbClientes;

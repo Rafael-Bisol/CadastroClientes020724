@@ -1,6 +1,16 @@
+using CadastroClientes.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// adicionar serviço do contexto do banco de dados e configura as opções
+builder.Services.AddDbContext<AppDbContexto>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("ConnStr"),
+        new MySqlServerVersion(new Version(8, 0, 21))
+));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -20,8 +30,9 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// a Controller
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Clientes}/{action=Index}/{id?}");
 
 app.Run();

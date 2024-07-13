@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Casinha";
+}
+
+@model IEnumerable<CadastroClientes.Models.Cliente>
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+    </tr>
+    @foreach(var cliente in Model)
+    {
+        <tr>
+            <td>@cliente.Nome</td>
+            <td>@cliente.Endereco</td>
+            <td>@cliente.Telefone</td>
+            <td><a asp-action="Editar" asp-route-id="@cliente.Cliente_id">Editar</a></td>
+            <td><a asp-action="Excluir" asp-route-id="@cliente.Cliente_id">Exluir</a></td>
+        </tr>
+    }
+</table>
