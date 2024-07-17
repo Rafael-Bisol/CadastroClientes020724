@@ -56,7 +56,7 @@ namespace CadastroClientes.Clink
 
         public async Task<IActionResult> Edit(Cliente cliente)
         {
-            // var cliente = await _context.tbClientes.FindAsync(id);
+            //var cliente = await _context.tbClientes.FindAsync(id);
             if (ModelState.IsValid && cliente != null)
             {
                 _context.Update(cliente);
